@@ -1,3 +1,14 @@
+<div class="d-flex">
+    <mat-toolbar class="position-absolute" color="primary">
+        <mat-toolbar-row class="justify-content-between">
+          <button [routerLink]="['/home']" mat-button>Home</button>
+          <button [routerLink]="['/login']" mat-button>Logout</button>
+        </mat-toolbar-row>
+      </mat-toolbar>    
+</div>    
+
+<br>
+
 <div class="d-flex align-items-center order-card">
     <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
@@ -94,3 +105,9 @@
         </div>
     </div>
 </div>
+
+<mat-toolbar class="position-absolute" color="primary">
+    <mat-toolbar-row class="justify-content-between">
+        <span>Copyright © <a href="https://www.parasprint.in/"> ParasPrint</a></span>
+    </mat-toolbar-row>
+  </mat-toolbar>
