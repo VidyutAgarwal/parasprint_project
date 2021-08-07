@@ -15,14 +15,16 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { OrderCardComponent } from './order-card/order-card.component';
 import { MatSelectModule } from '@angular/material/select';
-
+import { ModalComponent } from './utilities/modal/modal.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    OrderCardComponent
+    OrderCardComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +37,10 @@ import { MatSelectModule } from '@angular/material/select';
     FormsModule,
     ReactiveFormsModule,
     MatToolbarModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [MatDialog],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
