@@ -1,0 +1,96 @@
+<div class="d-flex align-items-center order-card">
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-sm-7">
+                <mat-card class="order-card__card">
+                    <h3 class="text-center orderCard__title">Visiting Card Details</h3>
+                    <form [formGroup]="orderCardForm" (ngSubmit)="onSubmit()">
+                        <mat-form-field appearance="fill" class="w-100">
+                            <mat-label>Select branch code</mat-label>
+                            <mat-select formControlName="branchCode">
+                                <mat-option *ngFor="let option of branchCodeList" value="{{option}}">{{option}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="w-100">
+                            <input type="text" matInput placeholder="Cost Center" formControlName="costCenter">
+                            <mat-error *ngIf="data.costCenter.errors?.required">Cost center is required</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="w-100">
+                            <input type="text" matInput placeholder="Branch Name" formControlName="branchName">
+                            <mat-error *ngIf="data.branchName.errors?.required">Branch Name is required</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="w-100">
+                            <mat-label>Card Type</mat-label>
+                            <mat-select formControlName="cardType">
+                                <mat-option *ngFor="let option of cardTypeList" value="{{option}}">{{option}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="w-100">
+                            <input type="text" matInput placeholder="First Name" formControlName="firstName">
+                            <mat-error *ngIf="data.firstName.errors?.required">First Name is required</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="w-100">
+                            <input type="text" matInput placeholder="Last Name" formControlName="lastName">
+                            <mat-error *ngIf="data.lastName.errors?.required">Last Name is required</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="w-100">
+                            <input type="text" matInput placeholder="Designation 1" formControlName="designation1">
+                            <mat-error *ngIf="data.designation1.errors?.required">Designation1 is required</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="w-100">
+                            <input type="text" matInput placeholder="Designation 2" formControlName="designation2">
+                            <mat-error *ngIf="data.designation2.errors?.required">Designation2 is required</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="w-100">
+                            <input type="text" matInput placeholder="Address Line 1" formControlName="addressLine1">
+                            <mat-error *ngIf="data.addressLine1.errors?.required">Address Line 1 is required</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="w-100">
+                            <input type="text" matInput placeholder="Address Line 1" formControlName="addressLine2">
+                            <mat-error *ngIf="data.addressLine2.errors?.required">Address Line 2 is required</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="w-100">
+                            <input type="text" matInput placeholder="City" formControlName="city">
+                            <mat-error *ngIf="data.city.errors?.required">City is required</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="w-100">
+                            <mat-label>State</mat-label>
+                            <mat-select formControlName="state">
+                                <mat-option *ngFor="let option of stateList" value="{{option}}">{{option}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="w-100">
+                            <input type="text" maxlength="10" matInput placeholder="Mobile" formControlName="mobile">
+                            <mat-error *ngIf="data.mobile.errors?.required">Mobile is required</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="w-100">
+                            <input type="text" maxlength="8" matInput placeholder="Phone" formControlName="phone">
+                            <mat-error *ngIf="data.phone.errors?.required">Phone is required</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="w-100">
+                            <input type="email" maxlength="10" matInput placeholder="Email" formControlName="email">
+                            <mat-error *ngIf="data.email.errors?.required">Email is required</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="w-100">
+                            <input type="text" maxlength="10" matInput placeholder="Order quantity"
+                                formControlName="orderQuantity">
+                            <mat-error *ngIf="data.orderQuantity.errors?.required">Order Quantity is required
+                            </mat-error>
+                        </mat-form-field>
+                        <small>*Minimum order quantity should be 100 atleast or in the multiples of 100</small>
+                        <mat-form-field class="w-100">
+                            <textarea matInput placeholder="Remarks" formControlName="remarks"></textarea>
+                            <mat-error *ngIf="data.remarks.errors?.required">Remarks is required</mat-error>
+                        </mat-form-field>
+                        <div class="form-group mt-4">
+                            <button mat-raised-button class="mr-3" color="primary">Submit</button>
+                            <button mat-raised-button color="primary">Preview</button>
+                        </div>
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
