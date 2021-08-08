@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ModalComponent } from '../utilities/modal/modal.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -30,5 +32,13 @@ export class LoginComponent implements OnInit {
     } else {
       this.submitted = true;      
     }
+  }
+   openDialog() {
+    console.log("openDialog method invoked!!");
+    const dialogRef = this.dialog.open(ModalComponent,{restoreFocus: false, disableClose: true});
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }
