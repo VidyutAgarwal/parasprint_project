@@ -25,6 +25,8 @@
             <div class="form-group mt-4">
               <button mat-raised-button color="primary">Login</button>
               <a [routerLink]="['/register']" class="ml-2" mat-button color="primary">Register</a>
+              <a class="ml-2 float-right" mat-button color="primary" mat-button
+                (click)="openDialog()"><u>Forget password</u></a>
             </div>
           </form>
         </mat-card>
